@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.homePage{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.allBooksContainer{
+    padding: 20px;
+}
+
+
+.allBooksContainerHeader{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.allBooksGrid{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}

@@ -1,0 +1,20 @@
+.bookCardContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(218, 186, 255);
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: rgb(212, 212, 212) 1px 1px 5px;
+    margin: 10px;
+}
+
+.bookCardContainer img{
+    width: 150px;
+    border-radius: 8px;
+}
+
+.bookTitle{
+    font-size: 20px;
+    font-weight: 600;
+}

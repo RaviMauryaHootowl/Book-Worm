@@ -1,0 +1,9 @@
+.sellBookFormContainer{
+    width: 100%;
+}
+
+.sellBookForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
