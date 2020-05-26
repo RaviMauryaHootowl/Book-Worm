@@ -15,6 +15,7 @@ const BookCard = ({item}) => {
             <img src={item.bookCover} alt=""/>
             <span className="bookTitle">{item.bookName}</span>
             <span className="bookAuthor">{item.bookAuthor}</span>
+            <span className="bookCost">₹{item.bookCost}</span>
         </div>
     );
 }

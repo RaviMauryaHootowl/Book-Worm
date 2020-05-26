@@ -11,6 +11,7 @@ const Home = () => {
     const history = useHistory();
     const {currentUser} = useContext(AuthContext);
     const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const Home = () => {
             const itemsData = [];
             snapshot.forEach(doc => itemsData.push({ ...doc.data(), id : doc.id}));
             setItems(itemsData);
+            setIsLoading(false);
         });
     }, [])
     
@@ -33,13 +35,17 @@ const Home = () => {
                     <span>Books To Buy</span>
                     <button className="sellBookBtn" onClick={() => {history.push('/sellbook')}}>Sell A Book</button>
                 </div>
-                <div className="allBooksGrid">
-                    {
-                        items.map(item => (
-                            <BookCard key={item.id} item={item} />
-                        ))
-                    }
-                </div>
+                {
+                    (isLoading) ? <div className="loadingContainer"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div> :
+                        <div className="allBooksGrid">
+                            {
+                                
+                                items.map(item => (
+                                    <BookCard key={item.id} item={item} />
+                                ))
+                            }
+                        </div>
+                }
             </div>
         </div>
     );

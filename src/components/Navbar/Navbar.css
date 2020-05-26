@@ -12,6 +12,7 @@
     letter-spacing: 2px;
     color: white;
     flex: 2;
+    cursor: pointer;
 }
 
 .signOutBtn{

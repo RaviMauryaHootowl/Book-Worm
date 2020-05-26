@@ -20,14 +20,20 @@ const BookDetails = ({match}) => {
             {
                 (bookItem.bookName != null) ?
                 <div className="bookDetailsContainer">
-                    <div className="">
-                        {bookItem.bookName}
-                    </div>
-                    <div className="">
-                        {bookItem.bookAuthor}
-                    </div>
-                    <div className="">
-                        To Buy, contact : {bookItem.sellerContact}
+                    <img className="bookCoverImage" src={bookItem.bookCover} alt=""/>
+                    <div className="bookAboutDetailsContainer">
+                        <span className="bookName">
+                            {bookItem.bookName}
+                        </span>
+                        <span className="bookAuthor">
+                            {bookItem.bookAuthor}
+                        </span>
+                        <span className="sellerNameDetails">
+                            Seller Name : <span className="sellerName">{bookItem.sellerName}</span>
+                        </span>
+                        <span className="sellerContact">
+                            To Buy, contact : <span className="sellerContactNumber">{bookItem.sellerContact}</span>
+                        </span>
                     </div>
                 </div> : <div>Loading...</div>
             }

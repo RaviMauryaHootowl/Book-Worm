@@ -20,6 +20,11 @@ const SellBook = () => {
         }
     }
 
+    const onFakeButtonClick = (e) => {
+        e.preventDefault();
+        document.getElementsByClassName('uploadCoverInput')[0].click();
+    }
+
     const sellBookSubmit = (e) => {
         e.preventDefault();
         //console.log(e.target.elements.bookName.value);
@@ -60,12 +65,16 @@ const SellBook = () => {
         <div className="bookSellPage">
             <Navbar />
             <div className="sellBookFormContainer">
+                <span className="containerHeader">Sell A Book</span>
                 <form className="sellBookForm" onSubmit={sellBookSubmit}>
-                    <input placeholder="Book Name" type="text" name="bookName" id=""/>
-                    <input placeholder="Book Author" type="text" name="bookAuthor" id=""/>
-                    <input placeholder="Set a Cost for the book" type="number" name="bookCost" id=""/>
-                    <input type="file" name="bookCover" accept="image/*" id="" onChange={imageSelected}/>
-                    <button type="submit">Sell Book</button>
+                    <input required placeholder="Book Name" type="text" name="bookName" id=""/>
+                    <input required placeholder="Book Author" type="text" name="bookAuthor" id=""/>
+                    <input required placeholder="Set a Cost for the book" type="number" name="bookCost" id=""/>
+                    <button onClick={onFakeButtonClick} className="uploadCoverButton">{
+                        (imageFile) ? `Selected ✅` : 'Upload Book Cover Image' 
+                    }</button>
+                    <input required className="uploadCoverInput" type="file" name="bookCover" accept="image/*" id="" onChange={imageSelected}/>
+                    <button className="sellBookBtn" type="submit">Sell Book</button>
                 </form>
             </div>
         </div>

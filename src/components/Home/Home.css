@@ -1,20 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.homePage{
+.homePage {
     width: 100%;
     min-height: 100vh;
 }
 
-.allBooksContainer{
+.allBooksContainer {
     padding: 20px;
 }
 
-
-.allBooksContainerHeader{
+.allBooksContainerHeader {
     font-size: 22px;
     font-weight: bold;
     display: flex;
@@ -22,7 +21,7 @@
     color: rgb(68, 68, 68);
 }
 
-.sellBookBtn{
+.sellBookBtn {
     font-size: 18px;
     background-color: rgb(150, 58, 255);
     border: none;
@@ -33,12 +32,63 @@
     transition: all 0.2s ease;
 }
 
-.sellBookBtn:active{
+.sellBookBtn:active {
     transform: scale(0.95);
 }
 
-.allBooksGrid{
+.allBooksGrid {
     margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* Loading Spinner */
+
+.loadingContainer {
+    width: 100%;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid royalblue;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: royalblue transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
