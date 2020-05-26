@@ -1,0 +1,74 @@
+.loginPage{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    width: 320px;
+}
+
+.containerHeader{
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(150, 58, 255);
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginContainer label{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginContainer input{
+    height: 40px;
+    width: 100%px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.loginBtn{
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(150, 58, 255);
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+.loginBtn:hover{
+    transform: scale(1.02);
+}
+
+.loginBtn:active{
+    transform: scale(0.95);
+}
+
+.createAccountBtn{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.createAccountBtn:hover{
+    letter-spacing: 1px;
+}

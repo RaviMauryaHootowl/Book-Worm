@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .navHeader{
@@ -11,7 +11,6 @@
     font-weight: bold;
     letter-spacing: 2px;
     color: white;
-    margin-left: 10px;
     flex: 2;
 }
 
@@ -23,4 +22,9 @@
     padding: 8px;
     color: white;
     border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.signOutBtn:active{
+    transform: scale(0.95);
 }

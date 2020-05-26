@@ -15,10 +15,26 @@
 
 
 .allBooksContainerHeader{
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    color: rgb(68, 68, 68);
+}
+
+.sellBookBtn{
+    font-size: 18px;
+    background-color: rgb(150, 58, 255);
+    border: none;
+    outline: none;
+    padding: 8px;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.sellBookBtn:active{
+    transform: scale(0.95);
 }
 
 .allBooksGrid{

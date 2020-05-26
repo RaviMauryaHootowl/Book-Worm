@@ -3,6 +3,7 @@ import {withRouter, Redirect} from 'react-router-dom';
 import firebase from '../../firebase';
 import {AuthContext} from '../../contexts/AuthContext';
 import {useHistory} from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
     const history = useHistory();
@@ -24,19 +25,22 @@ const Login = () => {
     }
 
     return(
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
-                <label>
-                    Email
-                    <input name="email" type="email" placeholder="Email" />
-                </label>
-                <label>
-                    Password
-                    <input name="password" type="password" placeholder="Password" />
-                </label>
-                <button type="submit">Login</button>
-            </form>
+        <div className="loginPage">
+            <div className="loginContainer">
+                <span className="containerHeader">Login</span>
+                <form className="loginForm" onSubmit={handleLogin}>
+                    <label>
+                        Email
+                        <input required name="email" type="email" placeholder="Email" />
+                    </label>
+                    <label>
+                        Password
+                        <input required name="password" type="password" placeholder="Password" />
+                    </label>
+                    <button className="loginBtn" type="submit">Login</button>
+                    <span onClick={() => history.push('/signup')} className="createAccountBtn">Create a new Account</span>
+                </form>
+            </div>
         </div>
     );
 }

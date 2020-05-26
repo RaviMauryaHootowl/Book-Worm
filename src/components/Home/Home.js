@@ -31,7 +31,7 @@ const Home = () => {
             <div className="allBooksContainer">
                 <div className="allBooksContainerHeader">
                     <span>Books To Buy</span>
-                    <button onClick={() => {history.push('/sellbook')}}>Sell A Book</button>
+                    <button className="sellBookBtn" onClick={() => {history.push('/sellbook')}}>Sell A Book</button>
                 </div>
                 <div className="allBooksGrid">
                     {
