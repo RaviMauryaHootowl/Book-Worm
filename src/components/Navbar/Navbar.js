@@ -8,6 +8,7 @@ const Navbar = () => {
     return (
         <div className="navbarContainer">
             <span onClick={() => {history.push('/');}} className="navHeader">Book Worm</span>
+            <button className="accountBtn" onClick={() => {history.push('/account');}}>Account</button>
             <button className="signOutBtn" onClick={() => {firebase.auth().signOut();}}>Sign Out</button>
         </div>
     );

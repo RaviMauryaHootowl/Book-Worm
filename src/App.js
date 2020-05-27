@@ -8,6 +8,7 @@ import SignUp from './components/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute';
 import BookDetails from './components/BookDetails/BookDetails';
 import SellBook from './components/SellBook/SellBook';
+import AccountsPage from './components/AccountsPage/AccountsPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <PrivateRoute exact path="/book/:id" component={BookDetails} />
           <PrivateRoute exact path="/sellbook" component={SellBook} />
+          <PrivateRoute exact path="/account" component={AccountsPage} />
         </div>
       </Router>
     </AuthProvider>

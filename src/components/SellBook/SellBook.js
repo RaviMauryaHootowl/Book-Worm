@@ -4,7 +4,8 @@ import firebase from '../../firebase';
 import { AuthContext } from '../../contexts/AuthContext';
 import Navbar from '../Navbar/Navbar';
 import BookCard from '../BookCard/BookCard';
-import { useHistory } from 'react-router-dom';
+import uuid from 'react-uuid';
+import {useHistory} from 'react-router-dom';
 
 
 const SellBook = () => {
@@ -31,8 +32,8 @@ const SellBook = () => {
         const bookName = e.target.elements.bookName.value;
         const bookAuthor = e.target.elements.bookAuthor.value;
         const bookCost = e.target.elements.bookCost.value;
-
-        const uploadTask = firebase.storage().ref(`images/${imageFile.name}`).put(imageFile);
+        const bookCoverUUID = uuid();
+        const uploadTask = firebase.storage().ref(`images/${bookCoverUUID}`).put(imageFile);
         uploadTask.on(
             "state_changed",
             snapshot => {},
@@ -40,7 +41,7 @@ const SellBook = () => {
                 alert(error);
             },
             () => {
-                firebase.storage().ref("images").child(imageFile.name).getDownloadURL().then(url => {
+                firebase.storage().ref("images").child(bookCoverUUID).getDownloadURL().then(url => {
                     addBookToDB(bookName, bookAuthor, bookCost, url);
                 });
             }
@@ -57,6 +58,10 @@ const SellBook = () => {
             sellerName : currentUser.displayName,
             bookCover : url
         }).then((res) => {
+            console.log(res);
+            firebase.firestore().collection('users').doc(currentUser.uid).update({
+                books : firebase.firestore.FieldValue.arrayUnion(`${res.id}`)
+            })
             history.push('/');
         })
     }

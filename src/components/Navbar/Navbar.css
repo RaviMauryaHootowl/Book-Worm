@@ -15,6 +15,22 @@
     cursor: pointer;
 }
 
+.accountBtn{
+    font-size: 18px;
+    background-color: rgb(81, 33, 255);
+    border: none;
+    outline: none;
+    padding: 8px;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    margin-right: 10px;
+}
+
+.accountBtn:active{
+    transform: scale(0.95);
+}
+
 .signOutBtn{
     font-size: 18px;
     background-color: rgb(255, 93, 93);

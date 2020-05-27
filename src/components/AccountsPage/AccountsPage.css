@@ -1,0 +1,76 @@
+.accountsPage{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.accountsPageContainer{
+    width: 100%;
+    height: calc(100vh - 60px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.accountsPageContainer .pageHeader{
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.userName{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.accountsBookList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.accountsBookCard{
+    background-color: rgb(210, 170, 255);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.accountsBookCard img{
+    width: 200px;
+}
+
+.accountsBookCardDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.accountsBookCardDetails .bookName{
+    font-size: 20px;
+    font-weight: 600;
+}
+.accountsBookCardDetails .bookCost{
+    font-size: 30px;
+    font-weight: 600;
+    color: teal;
+}
+
+.accountsBookCardDetails .bookDeleteBtn{
+    background-color: #e74c3c;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 100vh;
+    font-size: 18px;
+    color: white;
+}
+
+.booksListHeader{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

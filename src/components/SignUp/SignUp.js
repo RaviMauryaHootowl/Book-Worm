@@ -11,6 +11,12 @@ const SignUp = () => {
         try{
             await firebase.auth().createUserWithEmailAndPassword(email.value, password.value).then(
                 (result) => {
+                    firebase.firestore().collection('users').doc(result.user.uid).set({
+                        userName : username.value,
+                        email : email.value,
+                        contactNumber : 987654321,
+                        books : []
+                    })
                     result.user.updateProfile({
                         displayName : username.value
                     })
